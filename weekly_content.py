@@ -52,6 +52,7 @@ def summarize_sport(sport_name, results):
     ready = 0
     watching = 0
     failed = 0
+    review = 0
     closest_progress = None
     oldest_first_seen = None
 
@@ -84,6 +85,8 @@ def summarize_sport(sport_name, results):
                     closest_progress = (current, threshold)
         elif status.startswith("FAIL"):
             failed += 1
+        elif status.startswith("REVIEW"):
+            review += 1
             if is_new_this_week:
                 failed_this_week += 1
 
@@ -102,6 +105,7 @@ def summarize_sport(sport_name, results):
         "ready": ready,
         "watching": watching,
         "failed": failed,
+        "review": review,
         "closest_progress": closest_progress,
         "tracker_age_days": tracker_age_days,
         "is_immature": is_immature,
@@ -144,6 +148,8 @@ def build_entries(summaries):
         ]
         if s["ready"] > 0:
             context_parts.append(f"{s['ready']} cleared preliminary screening (ROI gate not yet applied).")
+        if s.get("review", 0) > 0:
+            context_parts.append(f"{s['review']} under review (mixed non-target activity, resolves within 21 days).")
         if s["closest_progress"]:
             current, threshold = s["closest_progress"]
             context_parts.append(f"Closest candidate: day {current} of {threshold}.")
