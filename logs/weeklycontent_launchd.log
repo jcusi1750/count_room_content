@@ -108,3 +108,14 @@ Generated 5 card(s) in /Users/joecusimano/count_room_content/output/wallet_scout
 Review these before posting. Nothing is auto-published.
 
 iMessage notification sent.
+Generated 5 card(s) in /Users/joecusimano/count_room_content/output/wallet_scout/:
+  - 2026-10-26_card_01.png
+  - 2026-10-26_card_02.png
+  - 2026-10-26_card_03.png
+  - 2026-10-26_card_04.png
+  - 2026-10-26_card_05.png
+
+Review these before posting. Nothing is auto-published.
+Telegram send failed (network): HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=10)
+
+iMessage notification sent.
